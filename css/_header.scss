@@ -1,0 +1,15 @@
+@import 'variables';
+
+/* HEADER */
+header {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    color: $base-color-light;
+    padding: 10px 20px;
+    display: flex;
+    @media screen and (min-width: 1220px) {
+        padding: 30px 100px;
+    }
+}

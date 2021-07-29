@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+        integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <!--Font-family-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto&display=swap">
+    <title>Proyecto-Gifo</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="./index.html"><img class="navbar-logo-desktop" src="./assets/logo-desktop.svg" id="logo-desktop"
+                alt="GifOS page logo"></a>
+        <a href="./index.html"><img class="navbar-logo-mobile" src="./assets/logo-mobile.svg" id="logo-mobile"
+                alt="GifOS page logo"></a>
+
+        <nav class="menu">
+            <input class="button" type="checkbox" name="checkbox-menu">
+            <span class="bars"></span>
+            <span class="bars"></span>
+            <span class="bars"></span>
+            <ul>
+                <li><a href="" class="menu-item dark-mode text" id="change-mode">Modo Nocturno</a></li>
+                <li><a href="./favorites.html" class="menu-item text">Favoritos</a></li>
+                <li><a href="./myGifo.html" class="menu-item text">Mis GIFOS</a></li>
+                <a href="./createGifo.html"><img class="create-gifo-btn" id="create-gif" class="create-gifo-btn"
+                        src="./assets/create-gifo-btn.svg" alt="create gifo button"></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="favoritos">
+            <div class="fav-icons"><img src="./assets/my-gifos-icon.svg" alt="my gifos face image icon"></div>
+            <h1 class="text">Mis GIFOS</h1>
+            <div class="fav-icons"><img src="./assets/my-gifos-sin-contenido-icon.svg" alt="No content image"></div>
+            <div class="fav-icons" id="ver-mas-gifos">
+                <button class="fav-btn"><img src="./assets/ver-mas-btn.svg" alt="see more button"></button>
+            </div>
+        </section>
+
+        <section id="trending">
+            <div class="trending-text">
+                <h2 class="text">Trending GIFOS</h2>
+                <p class="text">Mirá los últimos GIFOS de nuestra comunidad.</p>
+            </div>
+            <div class="main-trendign-container">
+                <img class="slider" id="left" src="./assets/slider-left-btn.svg" alt="slide gifos to the left button">
+                <div id="main-gifs-container-my-gifs">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <!-- Imágenes creadas con javascript -->
+                </div>
+                <img class="slider" id="right" src="./assets/slider-right-btn.svg"
+                    alt="slide gifos to the right button">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li>
+                <P class="share text">Compartir en:</P>
+            </li>
+            <li><a href="https://www.facebook.com/" target="_blank"><img src="./assets/facebook-icon.svg"
+                        alt="facebook icon"></a></li>
+            <li><a href="https://www.twitter.com/" target="_blank"><img src="./assets/twitter-icon.svg"
+                        alt="twitter icon"></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><img src="./assets/instagram-icon.svg"
+                        alt="instagram icon"></a></li>
+            <li>
+                <p class="copyright text">©️GIFOS 2020 All Rights Reserved.</p>
+            </li>
+        </ul>
+    </footer>
+
+   
+    <script src="./js/dark_mode.js"></script>
+    <script>
+        async function init() {
+            
+            console.log('sdkjdagfhj');
+            const gifs = localStorage.getItem('list');
+            const listGifs = gifs.split(',');
+            
+            for (let index = 0; index < listGifs.length; index++) {
+                const element = listGifs[index];
+                
+                const result = await getresult(element);
+    
+                let container = document.getElementById('main-gifs-container-my-gifs');
+                
+                //createGifCard(result)
+                container.replaceChild(createGifCard(result), container.children[index]);
+            }
+
+            
+            
+        }
+        
+        async function getresult(element) {
+            const url = `https://api.giphy.com/v1/gifs/${element}?api_key=Z7d1DhsIu3QW4YKuxVFs289b8ZiwX0Sp`;
+            let response = await fetch(url);
+            let result = await response.json();
+            return result;
+        }
+
+        function createGifCard(result) {
+            let div = document.createElement('div');
+            div.innerHTML = `<img src=${result.data.images.original.url} class='gif-img' id='gif'>`;
+            return div;
+        };
+
+        init();
+    </script>
+    <!--<script src="./js/slider-btns.js"></script>-->
+    <!--<script src="./js/search_bar.js"></script>-->
+</body>
+
+</html>

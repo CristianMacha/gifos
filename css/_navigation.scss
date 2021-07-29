@@ -1,0 +1,147 @@
+@import 'variables';
+
+  
+/* DESKTOP */
+#logo-desktop {
+    display: none;
+    @media screen and (min-width: 1220px) {
+        display: block;
+    }
+}
+  
+/* MOBILE */
+#logo-mobile {
+    display: block;
+    @media screen and (min-width: 1220px) {
+        display: none;
+    }
+}
+
+  
+  /* CREAR GIFO */
+.create-gifo-btn {
+    display: none;
+    @media screen and (min-width: 1220px) {
+        display: block;
+        cursor: pointer;
+    }
+}
+  
+  
+/* MENU */
+.menu {
+    ul {
+        width: 100%;
+        position: absolute;
+        top: 100px;
+        left: 5px;
+        overflow: hidden;
+        list-style: none;
+        background: $base-color-light;
+        opacity: 90%;
+        height: 0;
+
+        @media screen and (min-width: 1220px) {
+            top: 0;
+            overflow: hidden;
+            background: unset;
+            height: unset;
+            display: flex;
+            flex-flow: row;
+            justify-content: flex-end;
+            margin-top: 30px;
+            padding: 0 110px;
+        }
+  
+    }
+    li {
+        position: relative;
+        padding: 0 20px;
+        margin-top: 30px;
+        font-size: 15px;
+        color: $bg-color-light;
+        text-align: center;
+        line-height: 60px;
+        @media screen and (min-width: 1220px) {
+            text-transform: uppercase;
+            margin: 0;
+        }
+    }
+}
+  
+.menu-item {
+    text-decoration: none;
+    color: $bg-color-light;
+    line-height: 28px;
+    font-size: 16px;
+    @media screen and (min-width: 1220px) {
+        color: $base-color-light;
+        &:hover {
+            cursor: pointer;
+            border-bottom: 2px solid $special-color;
+        }
+    }
+}
+  
+.active {
+    color: $bg-color-gray;
+}
+  
+  /* HUMBURGER */
+.bars {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin-bottom: 6.5px;
+    margin-right: 10px;
+    position: relative;
+    background: $base-color-light;
+    z-index: 1;
+    transform-origin: 3px 0px;
+    transition: transform 0.5s ease, 
+    opacity 0.55s ease;
+    &:first-child {
+        transform-origin: 0% 0%;
+    }
+    &:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+    @media screen and (min-width: 1220px) {
+        display: none;
+    }
+    @media screen and (min-width: 768px) {
+        margin-right: 20px;
+    }
+}
+  
+/* checkbox style */
+.button {
+    display: block;
+    width: 40px;
+    height: 32px;
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+    &:hover {
+        cursor: pointer;
+    }
+    &:checked ~ ul {
+        height: 100%;
+        transition: height 0.5s ease-in-out;
+    }
+    &:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(2px, 1px);
+        &:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+        &:nth-last-child(2) {
+            transform: rotate(-45deg) translate(1px, 0px);
+        }
+    }
+    @media screen and (min-width: 1220px) {
+        display: none;
+    }
+}
+  

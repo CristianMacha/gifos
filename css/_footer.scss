@@ -1,0 +1,40 @@
+@import 'variables';
+
+footer {
+    width: 32%;
+    height: 180px;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    @media screen and (min-width: 1220px) {
+        justify-content: space-between;
+    }
+    P {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        color: #000000;
+        letter-spacing: 0;
+        margin-bottom: 20px;
+    }
+    ul{
+        text-align: center;
+        @media screen and (min-width: 1220px) {
+            display: flex;
+        }
+    }
+    li {
+        display: inline;
+        a {
+            color: #CDD6E0;
+            padding-right: 30px;
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

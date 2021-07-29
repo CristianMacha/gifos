@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <!--Font-family-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto&display=swap">
+    <title>Proyecto-Gifo</title>
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html"><img class="navbar-logo-desktop" src="./assets/logo-desktop.svg" id="logo-desktop" alt="GifOS page logo"></a>
+        <a href="./index.html"><img class="navbar-logo-mobile" src="./assets/logo-mobile.svg" id="logo-mobile" alt="GifOS page logo"></a>
+   
+        <nav class="menu">
+                <input class="button" type="checkbox" name="checkbox-menu">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <ul>
+                    <li><a href="" class="menu-item dark-mode text" id="change-mode">Modo Nocturno</a></li>
+                    <li><a href="./favorites.html" class="menu-item text">Favoritos</a></li>
+                    <li><a href="./myGifo.html" class="menu-item text">Mis GIFOS</a></li>
+                    <a href="./createGifo.html"><img class="create-gifo-btn" id="create-gif" class="create-gifo-btn" src="./assets/create-gifo-btn.svg" alt="create gifo button"></a>
+                </ul>
+        </nav>
+    </header>
+
+    <main id="main-gifo">
+        <section id="crear-gifo">
+            <div class="camera-img">
+                <img src="./assets/camera.svg" alt="camera image">
+            </div>
+            <div class="camera-light">
+                <img src="./assets/camera-light.svg" alt="camera light image">
+            </div>
+            <div class="content-gifo-camera">
+                <video id="videoWidget" class="video-active"></video>
+                <p id="video-content"></p>
+                <div class="create-card-container" id="create-container"> 
+                    <div class="text-content">                  
+                        <h1 id="create-title" class="text" >Aquí podrás crear tus propios <span>GIFOS</span></h1>
+                        <p class="text" id="create-paragraph-one">¡Crea tu GIFO en solo 3 pasos!</p>
+                        <p class="text" id="create-paragraph-two">(Sólo necesitas una cámara para grabar un video)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pelicula-img">
+                <img src="assets/pelicula.svg" alt="movie image">
+            </div>
+        </section>
+        
+        <section id="numbers">
+            <div>
+                <img class="numbers" id="btn-1" src="./assets/paso-a-paso-btn-1.svg" alt="">
+                <img class="numbers" id="btn-2" src="./assets/paso-a-paso-btn-2.svg" alt="">
+                <img class="numbers" id="btn-3" src="./assets/paso-a-paso-btn-3.svg" alt="">
+            </div>
+        </section>
+       
+        <div class="long-bar"></div>
+        <div class="fav-icons">
+            <button class="fav-btn"><img id="camera-btn" src="./assets/comenzar-btn.svg" alt=""></button>
+            <button class="fav-btn"><img id="grabar-btn" src="./assets/grabar-btn.svg" alt=""></button>
+            <button class="fav-btn"><img id="finalizar-btn" src="./assets/finalizar-btn.svg" alt=""></button>
+            <button class="fav-btn"><img id="subir-btn" src="./assets/subir-btn.svg" alt=""></button>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><P class="share text">Compartir en:</P></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><img src="./assets/facebook-icon.svg" alt="facebook icon"></a></li>
+            <li><a href="https://www.twitter.com/" target="_blank"><img src="./assets/twitter-icon.svg" alt="twitter icon"></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><img src="./assets/instagram-icon.svg" alt="instagram icon"></a></li>
+            <li><p class="copyright text">©️GIFOS 2020 All Rights Reserved.</p></li>
+        </ul>
+    </footer>
+
+    <script src="js/create_gifo_btn.js"></script> 
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="js/dark_mode.js"></script>
+</body>
+</html>

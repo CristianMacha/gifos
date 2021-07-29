@@ -1,0 +1,45 @@
+@import 'variables';
+ 
+#home {
+    width: 100%;
+    margin-top: 50px;
+    @media screen and (min-width: 1220px) {
+      padding: 0 100px;
+    }
+}
+  
+/*H1-TITULO*/
+h1 {
+    font-size: 25px;
+    line-height: 33px;
+    padding: 0 40px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: $base-color-light; 
+    @media screen and (min-width: 1220px) {
+        font-size: 35px;
+        line-height: 50px;
+        padding: 50px 300px;
+        text-align: center;
+        color: $base-color-light; 
+    } 
+    span {
+        color: $special-color; 
+    }
+}
+  
+/*IMAGEN*/
+.main-image {
+        display: flex;
+        justify-content: center;
+    img {
+        width: 400px;
+        height: 100%;
+        margin-top: 30px;
+        @media screen and (min-width: 1220px) {
+            height: 190px;
+        }
+    }
+}
+  

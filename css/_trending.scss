@@ -1,0 +1,88 @@
+@import 'variables';
+/*******************/
+#trending {
+    background-color: $trending-bg-color;
+    width: 100%;
+    height: 640px;
+    padding: 0 20px;
+    @media screen and (min-width: 1220px) {
+        padding: 0 100px;
+    }
+}
+  
+.trending-text {
+    text-align: center;
+    padding: 100px 60px;
+    font-weight: 400;
+    font-size: 16px;
+    color: $base-color-light;
+    line-height: 23px;
+    p {
+    color: $text-color;
+    padding-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    }
+}
+  
+.slider {
+    display: none;
+}
+  
+#main-gifs-container {
+    display: flex;
+    overflow: hidden;
+}
+  
+#main-gifs-container-my-gifs {
+    display: flex;
+    overflow: hidden;
+}
+
+#gif {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+}
+  
+@media screen and (min-width: 1220px) {
+    .main-trendign-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .slider {
+      padding: 0 30px;
+      display: block;
+    }
+}
+
+//ventana modal
+#ventana-modal{
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+}
+.modal-container {
+    background-color: $bg-color-violet;
+    width: 25%;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+    margin: auto;
+}
+  
+.modal-img {
+    float: right;
+    margin: 5px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+  
+.modal-text {
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 10px;
+}
+  
